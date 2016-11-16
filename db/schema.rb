@@ -10,21 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161115001010) do
+ActiveRecord::Schema.define(version: 20161116010045) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "nests", force: :cascade do |t|
-    t.string   "nest"
-    t.integer  "parent_id"
-    t.integer  "lft",        null: false
-    t.integer  "rgt",        null: false
+  create_table "nodes", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["lft"], name: "index_nests_on_lft", using: :btree
-    t.index ["parent_id"], name: "index_nests_on_parent_id", using: :btree
-    t.index ["rgt"], name: "index_nests_on_rgt", using: :btree
   end
 
 end
